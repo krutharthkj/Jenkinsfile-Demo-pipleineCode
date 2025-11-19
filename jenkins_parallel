@@ -1,0 +1,41 @@
+pipeline{
+	agent any
+	
+	tools{
+		maven 'mymaven'
+	}
+	
+	stages{
+		stage('parallel'){
+			parallel{
+				stage('compile the code'){
+					steps{
+						git 'https://github.com/krutharthkj/Jenkinsfile-Demo-pipleineCode.git'
+						sh 'mvn compile'
+					}
+				}
+				
+				stage('code review'){
+					steps{
+						sh 'mvn pmd:pmd'
+					}
+				}
+				
+				
+		stage('test the code'){
+			steps{
+				sh 'mvn test'
+			}
+		}
+
+
+        stage('package the code'){
+			steps{
+				sh 'mvn package'
+			}
+			
+		} 		
+			}
+		}
+	}
+}
