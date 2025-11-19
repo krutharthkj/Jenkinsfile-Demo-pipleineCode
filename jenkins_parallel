@@ -21,6 +21,8 @@ pipeline{
 					}
 				}
 			}	
+		}	
+				
 				
 		stage('compile the code'){
 			steps{
@@ -38,6 +40,6 @@ pipeline{
 			
 		} 		
 			
-		}
+	
 	}
 }
