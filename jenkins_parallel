@@ -24,6 +24,7 @@ pipeline{
 				
 		stage('test the code'){
 			steps{
+				git 'https://github.com/krutharthkj/Jenkinsfile-Demo-pipleineCode.git'
 				sh 'mvn test'
 			}
 		}
@@ -31,6 +32,7 @@ pipeline{
 
         stage('package the code'){
 			steps{
+				git 'https://github.com/krutharthkj/Jenkinsfile-Demo-pipleineCode.git'
 				sh 'mvn package'
 			}
 			
