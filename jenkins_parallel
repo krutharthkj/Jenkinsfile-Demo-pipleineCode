@@ -20,7 +20,7 @@ pipeline{
 						sh 'mvn pmd:pmd'
 					}
 				}
-				
+			}	
 				
 		stage('compile the code'){
 			steps{
@@ -37,7 +37,7 @@ pipeline{
 			}
 			
 		} 		
-			}
+			
 		}
 	}
 }
