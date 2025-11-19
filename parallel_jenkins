@@ -1,0 +1,33 @@
+pipeline{
+	agent any 
+	
+	tools{
+		maven 'mymaven'
+	}
+	
+	
+	stages{
+		stage('Parallel'){
+			parallel{
+				stage('test the code'){
+					steps{
+						git ''
+						sh 'mvn test'
+					}				
+				}
+				
+				stage('code review'){
+					steps{
+						sh 'mvn pmd:pmd'
+					}					
+				}
+				
+				
+			}
+		}
+		
+		
+		
+		
+	}
+}
