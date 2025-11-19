@@ -8,10 +8,10 @@ pipeline{
 	stages{
 		stage('parallel'){
 			parallel{
-				stage('compile the code'){
+				stage('test the code'){
 					steps{
 						git 'https://github.com/krutharthkj/Jenkinsfile-Demo-pipleineCode.git'
-						sh 'mvn compile'
+						sh 'mvn test'
 					}
 				}
 				
@@ -22,10 +22,10 @@ pipeline{
 				}
 				
 				
-		stage('test the code'){
+		stage('compile the code'){
 			steps{
 				git 'https://github.com/krutharthkj/Jenkinsfile-Demo-pipleineCode.git'
-				sh 'mvn test'
+				sh 'mvn compile'
 			}
 		}
 
