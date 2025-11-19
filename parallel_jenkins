@@ -11,7 +11,7 @@ pipeline{
 			parallel{
 				stage('test the code'){
 					steps{
-						git ''
+						git 'https://github.com/krutharthkj/Jenkinsfile-Demo-pipleineCode.git'
 						sh 'mvn test'
 					}				
 				}
